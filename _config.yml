@@ -1,0 +1,27 @@
+title: "if __name__ == 'Alexandra':"
+author: Alexandra Baier
+email: alx.baier@gmail.com
+description: >-
+  a blog that is probably about software development
+baseurl: ""
+url: "alexandrabaier.github.io"
+github_username: AlexandraBaier
+linkedin_username: alexandra-baier-a0b201186
+excerpt_separator: <!--more-->
+
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .idea
+  - .bundle
+  - README.md
