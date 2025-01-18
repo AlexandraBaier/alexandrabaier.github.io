@@ -1,1 +1,1 @@
-This repository hosts my blog, which can find at [alexandrabaier@github.io](https://alexandrabaier@github.io).
+This repository hosts my blog, which can find at [https://alexandrabaier.github.io](https://alexandrabaier.github.io).
