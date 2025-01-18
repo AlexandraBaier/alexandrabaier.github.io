@@ -1,5 +1,1 @@
-## Development
-
-```shell
-bundle exec jekyll serve
-```
+This repository hosts my blog, which can find at [alexandrabaier@github.io](https://alexandrabaier@github.io).
