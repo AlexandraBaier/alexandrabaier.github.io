@@ -10,4 +10,4 @@ computational social science and machine learning.
 
 This website hosts my blog, where I talk about my current hobby projects and interests.
 
-Feel free to contact me via Email, LinkedIn or GitHub issues.
+Feel free to contact me via Email or GitHub issues.

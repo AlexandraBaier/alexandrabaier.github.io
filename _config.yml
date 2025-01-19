@@ -6,7 +6,6 @@ description: >-
 baseurl: ""
 url: "alexandrabaier.github.io"
 github_username: AlexandraBaier
-linkedin_username: alexandra-baier-a0b201186
 excerpt_separator: <!--more-->
 
 markdown: kramdown
