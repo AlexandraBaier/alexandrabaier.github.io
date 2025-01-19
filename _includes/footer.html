@@ -1,39 +1,20 @@
 <footer class="site-footer h-card">
     <div class="wrapper">
-        <div class="footer-col-wrapper">
-            <div class="footer-col footer-col-1">
-                <ul class="contact-list">
-                    {%- if site.email -%}
-                    <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-                    {%- endif -%}
-                </ul>
-            </div>
-
-            <div class="footer-col footer-col-2">
-                <ul class="social-media-list">
-                    {%- if site.github_username -%}
-                    <li>
-                        <a href="https://github.com/{{ site.github_username| cgi_escape | escape }}">
-                            <svg class="svg-icon">
-                                <use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use>
-                            </svg>
-                            <span class="username">{{ site.github_username| escape }}</span>
-                        </a>
-                    </li>
-                    {%- endif -%}
-                    {%- if site.linkedin_username -%}
-                    <li>
-                        <a href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}">
-                            <svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use></svg>
-                            <span class="username">{{ site.author | escape }}</span>
-                        </a>
-                    </li>
-                    {%- endif -%}
-                </ul>
-            </div>
-            <div class="footer-col footer-col-3">
-                <p>{{- site.description | escape -}}</p>
-            </div>
+        {%- if site.email -%}
+        <div class="footer-link">
+            <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a>
         </div>
+        {%- endif -%}
+        {%- if site.github_username -%}
+        <div class="footer-link">
+        <a href="https://github.com/{{ site.github_username| cgi_escape | escape }}">
+            <svg class="svg-icon">
+                <use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use>
+            </svg>
+            <span class="username">{{ site.github_username| escape }}</span>
+        </a>
+        </div>
+        {%- endif -%}
+
     </div>
 </footer>
