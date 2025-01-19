@@ -120,8 +120,8 @@ Both of these types use the same trick as `Decrement`. An array of length `Numbe
 
 With that we have already almost all tricks that we will also use in the following sections.
 
-Now someone boring might say, why are there three more sections following this one
-just to define numbers, when you already have numbers using array types.
+Now someone boring might ask: "Why are there three more sections just to define numbers, 
+when you already have numbers using array types?".
 There are two reasons:
 
 1. This is more fun.
@@ -291,8 +291,9 @@ Then multiply the second bit of B with A and shift the result by 1 to the left a
 
 Repeat this for each bit and shift the product one bit further to the left each time.
 
-We already have the ability to add two bit sequences, so what we only need the ability to multiply a bit with a bit sequence
-and shift a bit sequence to the left.
+We already have the ability to add two bit sequences.
+To fully implement multiplication, we will also need to multiply a bit sequence with a single bit
+and a way to shift a bit sequence to the left by `n` bits.
 
 We will also introduce some helpers for later that can truncate our bit sequences. This will be useful,
 once we want our bit sequences to have a fixed-size. Here, it will help us in writing
@@ -394,7 +395,7 @@ So let's go ahead and implement integers next.
 The classic way to implement signed integers as opposed to unsigned integers is the two's complement 
 ([https://en.wikipedia.org/wiki/Two%27s_complement](https://en.wikipedia.org/wiki/Two%27s_complement)).
 Unfortunately, the two's complement expects us to make a sacrifice. 
-We have to forfeit infinity to perceive negativity.
+Our bit sequence needs to have a fixed length.
 Consequently, we define our new type `Int8` as a bit sequence type with a fixed length of `8`.
 We could do bigger numbers like `32`, `64` or `999`, 
 but there is a balance between precision and TypeScript's ability to crawl through recursive types.
@@ -414,9 +415,10 @@ type Int8 = BinaryNumberType<8>;
 
 What makes `Int8` so special is its ability to represent negative integers using the two's complement.
 So let's get started with that.
-Two's complement just involves two things: Invert the bits and add 1. 
-Adding is free using `AddBits`, but we need to implement the inversion first.
-We can then recognize a negative number by the zero-th bit. 
+Making a positive number negative with two's complement just involves two things: 
+Invert the bits and add 1. 
+Adding is free using `AddBits`, but we need to implement the inversion.
+We can then recognize a negative number by the first bit from the left. 
 If it is 1, we got us a negative integer otherwise a positive one.
 
 {% highlight TypeScript %}
@@ -602,14 +604,14 @@ Nice, this almost feels like an actual programming language and not a type syste
 For neural networks, we need real numbers. We got integers and implementing genuine floating point numbers is not my vibe.
 So let's do the next best thing and turn towards fixed-width decimals.
 
-## Q3.4
+## Q4.3
 
 Fixed-width decimals are a perfectly good and accurate representation of the real numbers, don't let any haters tell you otherwise.
-We will implement the very cool number type called Q3.4 ([https://en.wikipedia.org/wiki/Q_(number_format)](https://en.wikipedia.org/wiki/Q_(number_format))).
+We will implement the very cool decimal representation called Q4.3 ([https://en.wikipedia.org/wiki/Q_(number_format)](https://en.wikipedia.org/wiki/Q_(number_format))).
 This fixed-width decimal representation requires 8 bits, which we luckily have with our `Int8` type.
 The first bit is a sign bit, the next three bit stand for the integer component of the number and the last 4 bits stand for
 the fractional component of the number. This gives us an amazingly large range from `-16` to `15 + 7/8`.
-The cool thing is the two's complement works for Q3.4 in the same way. So one less thing to worry about.
+The cool thing is the two's complement works for Q4.3 in the same way. So one less thing to worry about.
 
 Defining this number is really easy. The hard (more like fiddly really) part will be turning TypeScript numbers into the corresponding bit sequence.
 Both of these things are coming up:
@@ -744,7 +746,7 @@ Now let's proceed to the last puzzle piece, before we can assmble our neural net
 
 ## Vectors
 
-We got real numbers now! (Don't let anyone tell you that Q3.4 is not a perfect 100% accurate representation of real numbers.)
+We got real numbers now! (Don't let anyone tell you that Q4.3 is not a perfect 100% accurate representation of real numbers.)
 
 Neural networks just need one more thing: Vectors! (Some might say matrices or tensors are needed, too, but those are lies by mathematicians. 
 We use recursion or loops for that.)
