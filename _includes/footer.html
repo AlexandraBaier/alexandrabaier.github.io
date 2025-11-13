@@ -1,20 +1,9 @@
-<footer class="site-footer h-card">
-    <div class="wrapper">
-        {%- if site.email -%}
-        <div class="footer-link">
-            <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a>
-        </div>
-        {%- endif -%}
-        {%- if site.github_username -%}
-        <div class="footer-link">
-        <a href="https://github.com/{{ site.github_username| cgi_escape | escape }}">
-            <svg class="svg-icon">
-                <use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use>
-            </svg>
-            <span class="username">{{ site.github_username| escape }}</span>
-        </a>
-        </div>
-        {%- endif -%}
-
-    </div>
+<footer>
+    {%- if site.email -%}
+    <span><a href="mailto:{{ site.email }}">{{ site.email }}</a></span>
+    {%- endif -%}
+    {%- if site.github_username -%}
+    <span>&middot;</span>
+    <span><a href="https://github.com/{{ site.github_username| cgi_escape | escape }}">Github: {{ site.github_username| escape }}</a></span>
+    {%- endif -%}
 </footer>

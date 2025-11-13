@@ -1,13 +1,14 @@
 ---
-layout: page
 title: About
+template: default
 permalink: /about/
 ---
 
-Hello, I am Alexandra (she/they) a fullstack software developer from Karlsruhe/Germany. 
+<p>
+Hello, I am Alexandra (any pronouns) a queer data scientist/engineer from Karlsruhe/Germany.
+</p>
+
+<p>
 I am interested in agile software development, functional and declarative programming languages, 
-computational social science and machine learning. 
-
-This website hosts my blog, where I talk about my current hobby projects and interests.
-
-Feel free to contact me via Email or GitHub issues.
+machine learning and sociology. 
+</p>

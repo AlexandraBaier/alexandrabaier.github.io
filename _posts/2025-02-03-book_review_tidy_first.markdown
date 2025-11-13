@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Book review:  \"Tidy First?\" by Kent Beck"
+author: Alexandra
 tags:
   - software design
   - book review
@@ -40,7 +41,8 @@ sufficient mustard.
 Deeply nested conditional structures can sometimes be flattened with guard clauses.
 For example, a very common case in the legacy application I work on is the following
 
-```java
+{% highlight Java %}
+{% raw %}
 if (authorization.isAllowed(user)) {
   if (authorization.hasFullAccess(user)) {
     do something complicated
@@ -48,11 +50,13 @@ if (authorization.isAllowed(user)) {
     do something simple
   }
 }
-```
+{% endraw %}
+{% endhighlight %}
 
 This can be simplified to
 
-```java
+{% highlight Java %}
+{% raw %}
 if (!authorization.isAllowed(user)) {
   return not authorized;
 }
@@ -62,7 +66,8 @@ if (!authorization.hasFullAccess(user)) {
 }
 
 return something complicated
-```
+{% endraw %}
+{% endhighlight %}
 
 The benefits are very straightforward. Each guard clause checks or validates something trivial. Once we get past the
 guard clauses, we know that the input is valid or fully authorized or whatever.
@@ -194,10 +199,12 @@ Explain why it is weird and what it does. Future you or future others will thank
 
 Redundant comments are what LLMs and junior devs love. Stuff like
 
-```java
+{% highlight Java %}
+{% raw %}
 // Increment i by 1.
 i++;
-```
+{% endraw %}
+{% endhighlight %}
 
 Code is usually self-documenting. We don't need these kind of comments.
 

@@ -9,7 +9,9 @@ github_username: AlexandraBaier
 excerpt_separator: <!--more-->
 
 markdown: kramdown
-theme: minima
+kramdown:
+  syntax_highlighter: none
+theme: null
 plugins:
   - jekyll-feed
 

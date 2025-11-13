@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "AI without runtime: Building a neural network in TypeScript's type system"
+author: Alexandra
 tags:
   - TypeScript
   - machine learning
