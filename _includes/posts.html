@@ -5,7 +5,9 @@
         <h2>
             <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h2>
-        <p>{{ post.date | date: "%b %-d, %Y" }}</p>
+        <p><i>
+            <time>{{ post.date | date: "%Y-%m-%d" }}</time>
+        </i></p>
         <p>
             {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
         </p>

@@ -10,12 +10,14 @@ layout: default
     <header>
         <h1>{{ page.title | escape }}</h1>
         <p>
+            <i>
             <time datetime="{{ page.date | date_to_xmlschema }}">
-                {{ page.date | date: "%b %-d, %Y" }}
+                {{ page.date | date: "%Y-%m-%d" }}
             </time>
             {%- if page.author -%}
-            <span>&ndash; {{ page.author }}</span>
+            &ndash; {{ page.author }}
             {%- endif -%}
+            </i>
         </p>
     </header>
 

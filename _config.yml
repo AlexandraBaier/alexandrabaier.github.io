@@ -1,8 +1,7 @@
-title: "if __name__ == 'Alexandra':"
+title: "if __name__ == 'alexandra':"
 author: Alexandra Baier
-email: alx.baier@gmail.com
 description: >-
-  a blog that is probably about software development
+  a blog that is probably about software development but like yeah nah
 baseurl: ""
 url: "alexandrabaier.github.io"
 github_username: AlexandraBaier
